@@ -1,0 +1,71 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 20 23:07:16 2022
+
+@author: Shilpa
+"""
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data=pd.read_csv('Automobile_data.csv')
+print(data)
+
+print(data.head())
+print(data.tail())
+print(data.describe())
+print(data.shape)
+print(data.columns)
+print(data.nunique())
+print(data['wheel-base'].unique())
+'''print(data.isnull().sum())
+student=data.drop['aspiration'],axis=1
+print(student.head())'''
+
+print(data['normalized-losses'].loc[data['normalized-losses']=='?'].count())
+
+print(data['bore'].loc[data['bore']== '?'])
+
+data.make.value_counts().nlargest(10).plot(kind='bar',flgsize=(15,5))
+plt.title('no of vehiclase')
+plt.ylable('no of vehival')
+plt.xlable('make')
+
+data.symboling.hist(bins=6,color='green')
+plt.title("Insuranceriskratingsofvehicles")
+plt.ylabel('Numberofvehicles')
+plt.xlabel('Riskrating')
+
+data['normalized-losses'].hist(bins=5,color='orange')
+plt.title("Normalized losses ofvehicles")
+plt.ylabel('Numberofvehicles')
+plt.xlabel('Normalizedlosses')
+
+data['aspiration'].value_counts().plot.pie(figsize=(6,6),autopct='%.2f')
+plt.title("Aspirationpiediagram")
+
+
+
+data.horsepower[np.abs(data.horsepower-data.horsepower.mean())
+<=(3*data.horsepower.std())].hist(bins=5,color='red')
+plt.title("Horsepowerhistogram")
+plt.ylabel('Numberofvehicles')
+plt.xlabel('Horsepower')
+
+data['num-of-doors'].value_counts().plot(kind='bar',color='purple')
+plt.title("Numberofdoorsfrequencydiagram")
+plt.ylabel('Numberofvehicles')
+plt.xlabel('Numberofdoors')
+
+
+
+data.symboling.hist(bins=6,color='green');
+plt.title("Insurance risk ratings of vehicles")
+plt.ylabel('Number of vehicles')
+plt.xlabel('Risk rating');
+
+data['normalized-losses'].hist(bins=5,color='orange');
+plt.title("Normalized losses of vehicles")
+plt.ylabel('Number of vehicles')
+plt.xlabel('Normalized losses');
